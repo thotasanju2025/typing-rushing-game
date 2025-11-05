@@ -1,1 +1,53 @@
+body 
+{
+    margin: 0; 
+    background: linear-gradient(to bottom right, #6a11cb, #2575fc);
+    font-family: "Poppins", sans-serif;
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container
+{
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.game-container p, .game-container input
+{
+    margin: 10px 0; 
+}
+
+#input
+{
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    outline: none; 
+    transition: 0.3s; 
+}
+
+#input:focus
+{
+    box-shadow: 0 0 10px #fff;
+}
+
+#input:hover
+{
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+}
+
+h1
+{
+    font-size: 2rem;
+    margin-bottom: 1rem; 
+}
 
