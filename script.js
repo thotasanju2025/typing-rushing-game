@@ -6,7 +6,7 @@ const timeEl = document.getElementById("time");
 const words = ["code" , "github", "education", "python", "ai", "typing", "speed", "keyboard", "focus", "logic"];
 let randomWord;
 let score = 0;
-let time = 10;
+let time = parseInt(document.getElementById("time-select").value); 
 
 //Pick random word
 function getRandomWord()
