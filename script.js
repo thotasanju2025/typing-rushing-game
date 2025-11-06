@@ -3,7 +3,12 @@ const inputEl = document.getElementById("input");
 const scoreEl = document.getElementById("score");
 const timeEl = document.getElementById("time");
 
-const words = ["code" , "github", "education", "python", "ai", "typing", "speed", "keyboard", "focus", "logic"];
+const wordSets =
+{
+    programming: ["python", "github", "logic", "variable"],
+    animals: ["lion", "tiger", "elephant", "zebra"]
+};
+const words = wordSets[selectedTopic]; 
 let randomWord;
 let score = 0;
 let time = parseInt(document.getElementById("time-select").value); 
