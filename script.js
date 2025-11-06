@@ -14,13 +14,18 @@ function getRandomWord()
     return words[Math.floor(Math.random() * words.length)];
 }
 
-//Add word to DOM
-function addWord()
+function sartGame()
 {
+    document.getElementById("start-btn").addEventListener("click", startGame);
+    function addWord()
+    {
     randomWord = getRandomWord();
     wordEl.innerHTML = randomWord;
+    }
+    addWord();
+    
 }
-addWord();
+//Add word to DOM
 
 inputEl.addEventListener("input", (e) =>
 {
