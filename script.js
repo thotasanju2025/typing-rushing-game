@@ -67,7 +67,7 @@ function gameOver()
     document.body.innerHTML = `
     <h1>Time's up!</h1>
     <h2>Your score: ${score}</h2>
-    <button onclick = "location.reload()" >Play Again</button>
+    <button onclick = "location.reload()">Play Again</button>
     `;
 }
 
