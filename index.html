@@ -11,13 +11,25 @@
             <h1>Typing Rush</h1>
             <p id="word"></p>
             <p id="instructions" >Type the words as fast as you can before time runs out!</p>
-            <button id="start-btn" >Start Game</button>
-            <input type = "text" id = "input" placeholder = "Start typing..." autofocus />
+
+            <label for="topic-select">Choose Topic:</label>
+            <select id="topic-select">
+                <option value="programming">Programming</option>
+                <option value="animals">Animals</option>
+            </select>
+            <br><br>
+
+            <label for="time-select">Choose Time:</label>
             <select id="time-select" >
                 <option value = "30" >30s</option>
                 <option value = "60" >60s</option>
                 <option value = "90" >90s</option>
             </select>
+            <br><br>
+
+            <button id="start-btn" >Start Game</button>
+            <input type = "text" id = "input" placeholder = "Start typing..." disabled />
+            
             <p id = "score">Score: 0</p>
             <p id = "time">Time: 10</p>
         </div>
