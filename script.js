@@ -2,65 +2,81 @@ const wordEl = document.getElementById("word");
 const inputEl = document.getElementById("input");
 const scoreEl = document.getElementById("score");
 const timeEl = document.getElementById("time");
+const topicSelect = document.getElementById("topic-select");
+const timeSelect = document.getElementById("time-select");
+const startBtn = document.getElementById("start-btn");
+let words = []; 
 
 const wordSets =
 {
     programming: ["python", "github", "logic", "variable"],
     animals: ["lion", "tiger", "elephant", "zebra"]
 };
-const words = wordSets[selectedTopic]; 
+
 let randomWord;
 let score = 0;
-let time = parseInt(document.getElementById("time-select").value); 
+let time;
+let timer;
 
 //Pick random word
-function getRandomWord()
+function getRandomWord(words)
 {
     return words[Math.floor(Math.random() * words.length)];
 }
 
-function sartGame()
-{
-    document.getElementById("start-btn").addEventListener("click", startGame);
-    function addWord()
+function addWord()
     {
-    randomWord = getRandomWord();
-    wordEl.innerHTML = randomWord;
+    randomWord = getRandomWord(words);
+    wordEl.textContent = randomWord;
     }
+
+function startGame()
+{
+    const selectedTopic = topicSelect.value;
+    words = wordSets[selectedTopic];
+
+    time = parseInt(timeSelect.value);
+    score =0;
+
+    scoreEl.textContent = `Score: ${score}`;
+    timeEl.textContent = `Time: ${time}`;
     addWord();
-    
+
+    inputEl.disabled = false;
+    inputEl.value = "";
+    inputEl.focus();
+    startBtn.disabled = true;
+
+    timer = setInterval(() =>
+        {
+            time--;
+            timeEl.textContent = `Time: ${time}`;
+            if(time === 0)
+            {
+                clearInterval(timer);
+                gameOver();
+            }
+        }, 1000); 
 }
-//Add word to DOM
+    
 
 inputEl.addEventListener("input", (e) =>
-{
-    const typed = e.target.value;
-    if(typed == randomWord)
     {
-        addWord();
-        updateScore();
-        e.target.value = "";
-        time += 2
-    }
-});
+        const typed = e.target.value.trim();
+        if(typed === randomWord)
+        {
+            addWord();
+            updateScore();
+            e.target.value = "";
+            time += 2
+        }
+    });
 
 function updateScore()
 {
     score++;
-    scoreEl.innerHTML = `Score: ${score}`;
+    scoreEl.textContent = `Score: ${score}`;
 }
-
-// Timer
-const timer = setInterval(() =>
-{
-    time--;
-    timeEl.innerHTML = `Time: ${time}`;
-    if(time === 0)
-    {
-        clearInterval(timer);
-        gameOver();
-    }
-}, 1000);
 
 function gameOver()
 {
@@ -71,4 +87,5 @@ function gameOver()
     `;
 }
 
+startBtn.addEventListener("click", startGame); 
 
