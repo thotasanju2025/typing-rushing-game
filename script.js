@@ -41,6 +41,9 @@ const wordSets =
                 "BigBen", "MountRushmore", "SydeneyOpera","GoldenGate", "Stonehenge", "MachuPicchu", 
                 "ChirstTheRedeemer", "LeaningTower", "BurjKhalifa", "AngkorWat", "Petra", "NiagraFalls",
                  "Acropolis", "MountFuji"], 
+    sentences: ["The quick brown fox jumps over the lazy dog", "Programming is both challenging and fun", 
+                "She walked across the street with confidence", "The stars twinkled brightly in the night sky", 
+                "Practice makes perfect if you stay consistent"], 
 };
 
 let randomWord;
